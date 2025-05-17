@@ -1,0 +1,11 @@
+import hashlib
+import time
+
+def time_stamp(data):
+    timed=int(time.time())
+    combine=f"{data}-{timed}"
+    generate_hash=hashlib.sha256(combine.encode('utf-8')).hexdigest()
+    return generate_hash
+
+data="Hasan Ali"
+print(time_stamp(data))
